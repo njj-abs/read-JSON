@@ -33,8 +33,9 @@ class MainActivity : AppCompatActivity() {
             jsonText.text = jsonArray.toString()
             for (i in 0 until jsonArray.length()) {
                 val jsonObject = jsonArray.getJSONObject(i)
-                val name = jsonObject.getString("name")
-                str += name
+                val name = jsonObject.getJSONObject("name")
+                val firstName = name.getString("firstName")
+                str += firstName
             }
             jsonText.text = str
 
